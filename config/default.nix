@@ -16,6 +16,7 @@
   };
 
   globals.mapleader = " ";
+  enableMan = true;
 
 
 
@@ -26,6 +27,8 @@
 
     updatetime = 100;
     undofile = true;
+
+    scrolloff = 4;
 
  };
     viAlias = true;
@@ -46,6 +49,28 @@
 	options.desc = "Open parent directory in currnet window";
       }
 
+    # movement
+    {
+      mode = "n";
+      key = "<D-j>";
+      action = "<C-d>zz";
+    }
+    {
+      mode = "n";
+      key = "<D-k>";
+      action = "<C-u>zz";
+    }
+
+    {
+      mode = "n";
+      key = "n";
+      action = "nzz";
+    }
+    {
+      mode = "n";
+      key = "N";
+      action = "Nzz";
+    }
 
     # Tabs
     {
@@ -86,6 +111,7 @@ plugins.lsp = {
   servers = {
     lua_ls.enable = true;
     clangd.enable = true;
+    nixd.enable = true;
   };
 
 };
