@@ -40,8 +40,13 @@
 
           packages = {
             # Lets you run `nix run .` to start nixvim
-            default = nvim;
-          };
+            default = nvim.overrideAttrs(oldAttrs: {
+		meta = oldAttrs.meta or {} // {
+			description = "a nix vim wrapper";
+			license = "MIT";
+		};
+		});
+	  };
         };
     };
 }
