@@ -1,8 +1,10 @@
+{ self, pkgs, ... }: 
 {
   # Import all your configuration modules here
   imports = [ 
     ./bufferline.nix 
     ./telescope.nix
+    ./git.nix
   ];
 
   config = {
@@ -18,6 +20,9 @@
   globals.mapleader = " ";
   enableMan = true;
 
+  extraPlugins = with pkgs.vimPlugins; [
+    vim-be-good
+  ];
 
 
  opts = {
