@@ -16,6 +16,9 @@
     web-devicons.enable = true;
 
     oil.enable = true;
+
+    nvim-autopairs = { enable = true; };
+    trouble.enable = true;
   };
 
   globals.mapleader = " ";
