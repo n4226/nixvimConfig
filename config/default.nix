@@ -5,6 +5,7 @@
     ./bufferline.nix 
     ./telescope.nix
     ./git.nix
+    ./lsp.nix
   ];
 
   config = {
@@ -36,7 +37,7 @@
     scrolloff = 4;
 
  };
-    viAlias = true;
+    vimAlias = true;
 
 
     keymaps = [
@@ -63,6 +64,37 @@
     {
       mode = "n";
       key = "<D-k>";
+      action = "<C-u>zz";
+    }
+    {
+      mode = "v";
+      key = "<D-j>";
+      action = "<C-d>zz";
+    }
+    {
+      mode = "v";
+      key = "<D-k>";
+      action = "<C-u>zz";
+    }
+    # also bind for Alt key so TMUX can remap D-j to A-j which will be seen here
+    {
+      mode = "n";
+      key = "<A-j>";
+      action = "<C-d>zz";
+    }
+    {
+      mode = "n";
+      key = "<A-k>";
+      action = "<C-u>zz";
+    }
+    {
+      mode = "v";
+      key = "<A-j>";
+      action = "<C-d>zz";
+    }
+    {
+      mode = "v";
+      key = "<A-k>";
       action = "<C-u>zz";
     }
 
@@ -110,28 +142,5 @@
     ];
 
 
-plugins.lsp = {
-  enable = true;
-
-  servers = {
-    lua_ls.enable = true;
-    clangd.enable = true;
-    nixd.enable = true;
-  };
-
 };
-
-plugins.cmp = {
-  enable = true;
-  autoEnableSources = true;
-  settings.sources = [
-    {name = "nvim_lsp";}
-  ];
-
-};
-    # {name = "path";}
-    # {name = "buffer";}
-
-};
-
 }
