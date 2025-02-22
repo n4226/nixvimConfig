@@ -15,7 +15,12 @@
     lualine.enable = true;
     web-devicons.enable = true;
 
-    oil.enable = true;
+      oil = {
+	enable = true;
+	settings.view_options = {
+	  show_hidden = true;
+	};
+      };
 
     nvim-autopairs = { enable = true; };
     trouble.enable = true;
