@@ -147,6 +147,37 @@
       action = "<CMD>tabprevious<CR>";
       options.desc = "Go to the previous tab";
     }
+      # Splits
+    {
+      mode = "n";
+      key = "<leader>sh";
+      action = "<C-w>s";
+      options.desc = "Create new horizontal split";
+    }
+    {
+      mode = "n";
+      key = "<leader>sv";
+      action = "<C-w>v";
+      options.desc = "Create new vertical split";
+    }
+    {
+      mode = "n";
+      key = "<leader>td";
+      action = "<CMD>tabclose<CR>";
+      options.desc = "Close tab";
+    }
+    {
+      mode = "n";
+      key = "<leader>ts";
+      action = "<CMD>tabnext<CR>";
+      options.desc = "Go to the sub-sequent tab";
+    }
+    {
+      mode = "n";
+      key = "<leader>tp";
+      action = "<CMD>tabprevious<CR>";
+      options.desc = "Go to the previous tab";
+    }
     ];
 
 
