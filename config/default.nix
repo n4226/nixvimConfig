@@ -9,11 +9,11 @@
   ];
 
   config = {
-  #colorschemes.gruvbox.enable = true;
+    #colorschemes.gruvbox.enable = true;
 
-  plugins = {
-    lualine.enable = true;
-    web-devicons.enable = true;
+    plugins = {
+      lualine.enable = true;
+      web-devicons.enable = true;
 
       oil = {
 	enable = true;
@@ -22,29 +22,30 @@
 	};
       };
 
-    nvim-autopairs = { enable = true; };
-    trouble.enable = true;
-  };
+      nvim-autopairs = { enable = true; };
+      trouble.enable = true;
+    };
 
-  globals.mapleader = " ";
-  enableMan = true;
+    globals.mapleader = " ";
+    enableMan = true;
 
-  extraPlugins = with pkgs.vimPlugins; [
-    vim-be-good
-  ];
+    extraPlugins = with pkgs.vimPlugins; [
+      vim-be-good
+      obsidian-nvim
+    ];
 
 
- opts = {
-       	number = true;
-       	relativenumber = true;
-       	shiftwidth = 2;
+    opts = {
+      number = true;
+      relativenumber = true;
+      shiftwidth = 2;
 
-    updatetime = 100;
-    undofile = true;
+      updatetime = 100;
+      undofile = true;
 
-    scrolloff = 4;
+      scrolloff = 4;
 
- };
+    };
     vimAlias = true;
 
 
@@ -63,123 +64,123 @@
 	options.desc = "Open parent directory in currnet window";
       }
 
-    # movement
-    {
-      mode = "n";
-      key = "<D-j>";
-      action = "<C-d>zz";
-    }
-    {
-      mode = "n";
-      key = "<D-k>";
-      action = "<C-u>zz";
-    }
-    {
-      mode = "v";
-      key = "<D-j>";
-      action = "<C-d>zz";
-    }
-    {
-      mode = "v";
-      key = "<D-k>";
-      action = "<C-u>zz";
-    }
-    # also bind for Alt key so TMUX can remap D-j to A-j which will be seen here
-    {
-      mode = "n";
-      key = "<A-j>";
-      action = "<C-d>zz";
-    }
-    {
-      mode = "n";
-      key = "<A-k>";
-      action = "<C-u>zz";
-    }
-    {
-      mode = "v";
-      key = "<A-j>";
-      action = "<C-d>zz";
-    }
-    {
-      mode = "v";
-      key = "<A-k>";
-      action = "<C-u>zz";
-    }
+      # movement
+      {
+	mode = "n";
+	key = "<D-j>";
+	action = "<C-d>zz";
+      }
+      {
+	mode = "n";
+	key = "<D-k>";
+	action = "<C-u>zz";
+      }
+      {
+	mode = "v";
+	key = "<D-j>";
+	action = "<C-d>zz";
+      }
+      {
+	mode = "v";
+	key = "<D-k>";
+	action = "<C-u>zz";
+      }
+      # also bind for Alt key so TMUX can remap D-j to A-j which will be seen here
+      {
+	mode = "n";
+	key = "<A-j>";
+	action = "<C-d>zz";
+      }
+      {
+	mode = "n";
+	key = "<A-k>";
+	action = "<C-u>zz";
+      }
+      {
+	mode = "v";
+	key = "<A-j>";
+	action = "<C-d>zz";
+      }
+      {
+	mode = "v";
+	key = "<A-k>";
+	action = "<C-u>zz";
+      }
 
-    {
-      mode = "n";
-      key = "n";
-      action = "nzz";
-    }
-    {
-      mode = "n";
-      key = "N";
-      action = "Nzz";
-    }
+      {
+	mode = "n";
+	key = "n";
+	action = "nzz";
+      }
+      {
+	mode = "n";
+	key = "N";
+	action = "Nzz";
+      }
 
-    # Tabs
-    {
-      mode = "n";
-      key = "<leader>t";
-      action = "+tab";
-    }
-    {
-      mode = "n";
-      key = "<leader>tn";
-      action = "<CMD>tabnew<CR>";
-      options.desc = "Create new tab";
-    }
-    {
-      mode = "n";
-      key = "<leader>td";
-      action = "<CMD>tabclose<CR>";
-      options.desc = "Close tab";
-    }
-    {
-      mode = "n";
-      key = "<leader>ts";
-      action = "<CMD>tabnext<CR>";
-      options.desc = "Go to the sub-sequent tab";
-    }
-    {
-      mode = "n";
-      key = "<leader>tp";
-      action = "<CMD>tabprevious<CR>";
-      options.desc = "Go to the previous tab";
-    }
+      # Tabs
+      {
+	mode = "n";
+	key = "<leader>t";
+	action = "+tab";
+      }
+      {
+	mode = "n";
+	key = "<leader>tn";
+	action = "<CMD>tabnew<CR>";
+	options.desc = "Create new tab";
+      }
+      {
+	mode = "n";
+	key = "<leader>td";
+	action = "<CMD>tabclose<CR>";
+	options.desc = "Close tab";
+      }
+      {
+	mode = "n";
+	key = "<leader>ts";
+	action = "<CMD>tabnext<CR>";
+	options.desc = "Go to the sub-sequent tab";
+      }
+      {
+	mode = "n";
+	key = "<leader>tp";
+	action = "<CMD>tabprevious<CR>";
+	options.desc = "Go to the previous tab";
+      }
       # Splits
-    {
-      mode = "n";
-      key = "<leader>sh";
-      action = "<C-w>s";
-      options.desc = "Create new horizontal split";
-    }
-    {
-      mode = "n";
-      key = "<leader>sv";
-      action = "<C-w>v";
-      options.desc = "Create new vertical split";
-    }
-    {
-      mode = "n";
-      key = "<leader>td";
-      action = "<CMD>tabclose<CR>";
-      options.desc = "Close tab";
-    }
-    {
-      mode = "n";
-      key = "<leader>ts";
-      action = "<CMD>tabnext<CR>";
-      options.desc = "Go to the sub-sequent tab";
-    }
-    {
-      mode = "n";
-      key = "<leader>tp";
-      action = "<CMD>tabprevious<CR>";
-      options.desc = "Go to the previous tab";
-    }
+      {
+	mode = "n";
+	key = "<leader>sh";
+	action = "<C-w>s";
+	options.desc = "Create new horizontal split";
+      }
+      {
+	mode = "n";
+	key = "<leader>sv";
+	action = "<C-w>v";
+	options.desc = "Create new vertical split";
+      }
+      {
+	mode = "n";
+	key = "<leader>td";
+	action = "<CMD>tabclose<CR>";
+	options.desc = "Close tab";
+      }
+      {
+	mode = "n";
+	key = "<leader>ts";
+	action = "<CMD>tabnext<CR>";
+	options.desc = "Go to the sub-sequent tab";
+      }
+      {
+	mode = "n";
+	key = "<leader>tp";
+	action = "<CMD>tabprevious<CR>";
+	options.desc = "Go to the previous tab";
+      }
     ];
 
 
-};
+  };
 }
