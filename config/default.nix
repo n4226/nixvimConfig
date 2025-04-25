@@ -6,6 +6,7 @@
     ./telescope.nix
     ./git.nix
     ./lsp.nix
+    ./split_cmds.nix
   ];
 
   config = {
@@ -65,6 +66,7 @@
                   sha256 = "sha256-PEyXMsCkK9yR39iU5h6rSjXJFUTCB8R4hzWQX25H3h0";
                 };
         })
+      zoomwintab-vim
     ];
 
 
@@ -78,7 +80,7 @@
 
       scrolloff = 4;
 
-      conceallevel = 1;
+      conceallevel = 2;
     };
     vimAlias = true;
 
@@ -234,62 +236,7 @@
 	action = "<CMD>tabprevious<CR>";
 	options.desc = "Go to the previous tab";
       }
-      # Splits
-      {
-	mode = "n";
-	key = "<leader>sh";
-	action = "<C-w>s";
-	options.desc = "Create new horizontal split";
-      }
-      {
-	mode = "n";
-	key = "<leader>sv";
-	action = "<C-w>v";
-	options.desc = "Create new vertical split";
-      }
-
-      {
-	mode = "n";
-	key = "<A-L>";
-	action = "<C-w>l";
-	options.desc = "Go to right split";
-	options = {
-	  noremap = true;
-	  silent = true;
-	};
-      }
-      {
-	mode = "n";
-	key = "<A-H>";
-	action = "<C-w>h";
-	options.desc = "Go to left split";
-	options = {
-	  noremap = true;
-	  silent = true;
-	};
-      }
-      {
-	mode = "n";
-	key = "<A-J>";
-	action = "<C-w>j";
-	options.desc = "Go to down split";
-	options = {
-	  noremap = true;
-	  silent = true;
-	};
-      }
-      {
-	mode = "n";
-	key = "<A-K>";
-	action = "<C-w>k";
-	options.desc = "Go to up split";
-	options = {
-	  noremap = true;
-	  silent = true;
-	};
-      }
       
-
 
 
       {

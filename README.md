@@ -1,17 +1,30 @@
-# Nixvim template
+# Michael's Nixvim template
 
-This template gives you a good starting point for configuring nixvim standalone.
+This is my nixvim config
 
-## Configuring
+# Config Basics
 
-To start configuring, just add or modify the nix files in `./config`.
-If you add a new configuration file, remember to add it to the
-[`config/default.nix`](./config/default.nix) file
+## Navigation
 
-## Testing your new configuration
+`CMD-j` and `CMD-k` to jump half a page and recenter
 
-To test your configuration simply run the following command
+`-` to use oil to navigate files
 
+`ALT--` (ALT and -) to go to last file opened
+`gb` = go back
+
+`<leader>sh` split horizontal
+`<leader>sv` split vertical
+
+`CMD + shift + jkl` to move across splits
+
+`ESC` to leave terminal mode
+
+
+CMD-o to switch between header and impl files
+
+# Other 
+to test config changes:
 ```
-nix run .
+ix run
 ```
