@@ -169,6 +169,11 @@
 	key = "_";
 	action = "<CMD>b#<CR>";
       }
+      {
+	mode = "n";
+	key = "<Esc>[_";
+	action = "<CMD>b#<CR>";
+      }
       # go back (includes oil pages)
       {
 	mode = "n";
