@@ -50,6 +50,12 @@
 	};
       };
 
+      # harpoon didn't work 
+	#      harpoon = {
+	# enable = true;
+	# enableTelescope = true;
+	#      };
+
     };
 
     globals.mapleader = " ";
@@ -57,16 +63,16 @@
 
     extraPlugins = with pkgs.vimPlugins; [
       vim-be-good
-       (pkgs.vimUtils.buildVimPlugin {
-                pname = "ouroboros.nvim";
-                version = "master";
-                src = pkgs.fetchFromGitHub {
-                  owner = "jakemason";
-                  repo = "ouroboros.nvim";
-                  rev = "master";
-                  sha256 = "sha256-PEyXMsCkK9yR39iU5h6rSjXJFUTCB8R4hzWQX25H3h0";
-                };
-        })
+      (pkgs.vimUtils.buildVimPlugin {
+	pname = "ouroboros.nvim";
+	version = "master";
+	src = pkgs.fetchFromGitHub {
+	  owner = "jakemason";
+	  repo = "ouroboros.nvim";
+	  rev = "master";
+	  sha256 = "sha256-PEyXMsCkK9yR39iU5h6rSjXJFUTCB8R4hzWQX25H3h0";
+	};
+      })
       zoomwintab-vim
     ];
 
@@ -84,6 +90,7 @@
       conceallevel = 2;
     };
     vimAlias = true;
+
 
 
     keymaps = [
@@ -194,7 +201,7 @@
 	key = "<Esc>[o";  # Alt+o
 	action = "<cmd>Ouroboros<CR>";
       }
-      
+
 
       {
 	mode = "n";
@@ -237,7 +244,7 @@
 	action = "<CMD>tabprevious<CR>";
 	options.desc = "Go to the previous tab";
       }
-      
+
 
 
       {
