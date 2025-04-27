@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   config = {
     keymaps = [
       # Splits

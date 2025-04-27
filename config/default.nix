@@ -7,6 +7,9 @@
     ./git.nix
     ./lsp.nix
     ./split_cmds.nix
+    ./spellcheck.nix
+    ./obsidian.nix
+    ./harpoon.nix
   ];
 
   config = {
@@ -31,30 +34,6 @@
 
       nvim-autopairs = { enable = true; };
       trouble.enable = true;
-
-
-      obsidian = {
-	enable = true;
-	settings = {
-	  completion = {
-	    min_chars = 2;
-	    nvim_cmp = true;
-	  };
-	  new_notes_location = "current_dir";
-	  workspaces = [
-	    {
-	      name = "personal";
-	      path = "~/vault/personal";
-	    }
-	  ];
-	};
-      };
-
-      # harpoon didn't work 
-	#      harpoon = {
-	# enable = true;
-	# enableTelescope = true;
-	#      };
 
     };
 
@@ -264,6 +243,19 @@
 	key = "<leader>tp";
 	action = "<CMD>tabprevious<CR>";
 	options.desc = "Go to the previous tab";
+      }
+
+
+      # obsidian
+      {
+	mode = "n";  # normal mode
+	key = "gf";
+	action = "require('obsidian').util.gf_passthrough()";
+	options = {
+	  noremap = false;
+	  expr = true;
+	  buffer = true;
+	};
       }
     ];
 
