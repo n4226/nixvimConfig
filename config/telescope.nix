@@ -1,20 +1,24 @@
 {
-plugins.telescope = {
-    enable = true;
-    # keymaps = {	
-    # 	"<leader>ff" = "find_files";
-    #   "<leader>fg" = "live_grep";
-    #   "<C-p>" = {
-    #     action = "git_files";
-    #     options = {
-    #       desc = "Telescope Git Files";
-    #     };
-    #   };
-    # };
 
-    # telescope isntall inspired by https://github.com/redyf/Neve/blob/main/config/telescope/telescope-nvim.nix
+  config = {
 
-    keymaps = {
+    plugins.telescope = {
+      enable = true;
+      settings = { };
+      # keymaps = {	
+      # 	"<leader>ff" = "find_files";
+      #   "<leader>fg" = "live_grep";
+      #   "<C-p>" = {
+      #     action = "git_files";
+      #     options = {
+      #       desc = "Telescope Git Files";
+      #     };
+      #   };
+      # };
+
+      # telescope isntall inspired by https://github.com/redyf/Neve/blob/main/config/telescope/telescope-nvim.nix
+
+      keymaps = {
         "<leader><space>" = {
           action = "find_files";
           options.desc = "Find project files";
@@ -120,6 +124,7 @@ plugins.telescope = {
         #   options.desc = "Todo (Telescope)";
         # };
       };
-    extensions.fzf-native = { enable = true; };
+      extensions.fzf-native = { enable = true; };
+    };
   };
 }
