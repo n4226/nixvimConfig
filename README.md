@@ -26,5 +26,5 @@ CMD-o to switch between header and impl files
 # Other 
 to test config changes:
 ```
-ix run
+nix run
 ```

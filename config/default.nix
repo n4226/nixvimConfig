@@ -10,6 +10,8 @@
     ./spellcheck.nix
     ./obsidian.nix
     ./harpoon.nix
+    ./undotree.nix
+    ./convienience_keymaps.nix
   ];
 
   config = {
@@ -58,13 +60,22 @@
 
     opts = {
       number = true;
-      relativenumber = true;
-      shiftwidth = 2;
+      relativenumber = true;  
+
+      #indenting
+      tabstop = 4;
+      softtabstop = 4;
+      shiftwidth = 4;
+      expandtab = true;
 
       updatetime = 100;
       undofile = true;
+      hlsearch = false;
+      incsearch = true;
 
-      scrolloff = 4;
+
+      scrolloff = 8;
+
 
       conceallevel = 2;
     };

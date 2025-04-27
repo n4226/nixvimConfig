@@ -5,29 +5,29 @@
 
 //a fun func
 int add(int a, int b) {
-  {
-    return a + b;
-  }
+    {
+        return a + b;
+    }
 }
 
 int sub(int a, int b) {
-  return a - b;
+    return a - b;
 }
 
 int main() {
 
-  int a = 1;
-  int c = add(a, 4);
+    int a = 1;
+    int c = add(a, 4);
 
-  int myVar = a;
+    int myVar = a;
 
-  printf("Hwllo %d, %d",a,c);
-
-
-  printf("Hello");
-
-  printf("Hello\n");
+    printf("Hwllo %d, %d",a,c);
+    printf("Hello");
 
 
-  return 0;
+
+    printf("Hello\n");
+
+
+    return 0;
 }
