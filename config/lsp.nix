@@ -59,6 +59,7 @@
       lua_ls.enable = true;
       clangd.enable = true;
       nixd.enable = true;
+      sourcekit.enable = true;
     };
     # keymaps.lspBuf = {
     #   "gd" = "definition";
@@ -297,6 +298,7 @@
           "bash"
           "c"
           "cpp"
+          "swift"
           "html"
           "css"
           "javascript"
