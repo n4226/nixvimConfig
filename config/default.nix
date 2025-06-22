@@ -16,6 +16,7 @@
   config = {
     #colorschemes.gruvbox.enable = true;
     colorschemes.tokyonight.enable = true;
+    colorschemes.tokyonight.transparent = true;
 
     plugins = {
       lualine.enable = true;
