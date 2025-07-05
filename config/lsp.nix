@@ -7,6 +7,14 @@
       formatters_by_ft = {
         nix = [ "nixfmt" ];
         cpp = [ "clang-format" ];
+        swift = [ "swift_format" ];
+      };
+      formatters = {
+        swift_format = {
+          command = "swift-format";
+          # stdin = false,
+          # args = { "$FILENAME", "\-\-in-place" },
+        };
       };
       # format_on_save = # Lua
       #   ''
@@ -58,7 +66,7 @@
     servers = {
       lua_ls.enable = true;
       clangd.enable = true;
-      nixd.enable = true;
+      #nixd.enable = true;
       sourcekit.enable = true;
     };
     # keymaps.lspBuf = {
