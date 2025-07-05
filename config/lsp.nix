@@ -66,7 +66,10 @@
       lua_ls.enable = true;
       clangd.enable = true;
       #nixd.enable = true;
-      sourcekit.enable = true;
+      sourcekit = {
+        enable = true;
+        package = null;
+      };
     };
     # keymaps.lspBuf = {
     #   "gd" = "definition";
