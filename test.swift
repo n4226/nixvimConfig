@@ -1,6 +1,6 @@
 import Foundation
 
-struct Person: Equatable {
+struct Person: Equatable, Hashable {
   var name: String
   var age: Int
 
@@ -15,11 +15,11 @@ func main() {
   print("Hello World: \(p.name)")
 }
 
-let p = Person(name: "Howdy", age: 10)
-let p2 = Person(name: x, age: Int)
+let p1 = Person(name: "Howdy", age: 10)
+let p2 = Person(name: "how", age: 10)
 let p3 = Person(name: "Hey", age: 10)
 
-if (p.name != "how") {
+if (p1.name != "how") {
+  let dict = Dictionary<Person, Int>()
 }
 
-guar

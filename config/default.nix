@@ -74,6 +74,19 @@
     };
     vimAlias = true;
 
+    # configure swift file tabs
+    files = {
+      "after/ftplugin/swift.lua" = {
+        localOpts = {
+          #indenting
+          tabstop = 2;
+          softtabstop = 2;
+          shiftwidth = 2;
+          expandtab = true;
+        };
+      };
+    };
+
     keymaps = [
       {
         key = "-";
