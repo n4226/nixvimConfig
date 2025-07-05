@@ -12,7 +12,6 @@
       formatters = {
         swift_format = {
           command = "swift-format";
-          # stdin = false,
           # args = { "$FILENAME", "\-\-in-place" },
         };
       };
@@ -157,6 +156,7 @@
       enable_autosnippets = true;
       store_selection_keys = "<Tab>";
     };
+    # todo: can't fiture out how to load swift.snippet here
     fromVscode = [{
       lazyLoad = true;
       paths = "${pkgs.vimPlugins.friendly-snippets}";
@@ -195,46 +195,46 @@
         "<C-n>" = "cmp.mapping.select_next_item()";
         "<C-p>" = "cmp.mapping.select_prev_item()";
 
-        "<Tab>" =
-          # lua 
-          "      function(fallback)\n	local line = vim.api.nvim_get_current_line()\n	if line:match(\"^%s*$\") then\n	  fallback()\n	elseif cmp.visible() then\n	  cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })\n	else\n	  fallback()\n	end\n      end\n      ";
-        "<Down>" =
-          # lua
-          "      function(fallback)\n	if cmp.visible() then\n	  cmp.select_next_item()\n	elseif require(\"luasnip\").expand_or_jumpable() then\n	  vim.fn.feedkeys(vim.api.nvim_replace_termcodes(\"<Plug>luasnip-expand-or-jump\", true, true, true), \"\")\n	else\n	  fallback()\n	end\n      end\n      ";
-        "<Up>" =
-          # lua
-          "      function(fallback)\n	if cmp.visible() then\n	  cmp.select_prev_item()\n	elseif require(\"luasnip\").jumpable(-1) then\n	  vim.fn.feedkeys(vim.api.nvim_replace_termcodes(\"<Plug>luasnip-jump-prev\", true, true, true), \"\")\n	else\n	  fallback()\n	end\n      end\n      ";
+        # "<Tab>" =
+        #   # lua 
+        #   "      function(fallback)\n	local line = vim.api.nvim_get_current_line()\n	if line:match(\"^%s*$\") then\n	  fallback()\n	elseif cmp.visible() then\n	  cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })\n	else\n	  fallback()\n	end\n      end\n      ";
+        # "<Down>" =
+        #   # lua
+        #   "      function(fallback)\n	if cmp.visible() then\n	  cmp.select_next_item()\n	elseif require(\"luasnip\").expand_or_jumpable() then\n	  vim.fn.feedkeys(vim.api.nvim_replace_termcodes(\"<Plug>luasnip-expand-or-jump\", true, true, true), \"\")\n	else\n	  fallback()\n	end\n      end\n      ";
+        # "<Up>" =
+        #   # lua
+        #   "      function(fallback)\n	if cmp.visible() then\n	  cmp.select_prev_item()\n	elseif require(\"luasnip\").jumpable(-1) then\n	  vim.fn.feedkeys(vim.api.nvim_replace_termcodes(\"<Plug>luasnip-jump-prev\", true, true, true), \"\")\n	else\n	  fallback()\n	end\n      end\n      ";
 
-        # "<Tab>" = ''
-        #   cmp.mapping(function(fallback)
-        #     if cmp.visible() then
-        #       cmp.select_next_item()
-        #     elseif luasnip.expand_or_jumpable() then
-        #       luasnip.expand_or_jump()
-        #     else
-        #       fallback()
-        #     end
-        #   end, { "i", "s" })
-        # '';
-        #
-        # "<S-Tab>" = ''
-        #   cmp.mapping(function(fallback)
-        #     if cmp.visible() then
-        #       cmp.select_prev_item()
-        #     elseif luasnip.locally_jumpable(-1) then
-        #       luasnip.jump(-1)
-        #     else
-        #       fallback()
-        #     end
-        #   end, { "i", "s" })
-        # '';
+         "<Tab>" = ''
+           cmp.mapping(function(fallback)
+             if cmp.visible() then
+               cmp.select_next_item()
+             elseif luasnip.expand_or_jumpable() then
+               luasnip.expand_or_jump()
+             else
+               fallback()
+             end
+           end, { "i", "s" })
+         '';
+        
+         "<S-Tab>" = ''
+           cmp.mapping(function(fallback)
+             if cmp.visible() then
+               cmp.select_prev_item()
+             elseif luasnip.locally_jumpable(-1) then
+               luasnip.jump(-1)
+             else
+               fallback()
+             end
+           end, { "i", "s" })
+         '';
 
         "<C-e>" = "cmp.mapping.abort()";
         "<C-f>" = "cmp.mapping.scroll_docs(4)";
         "<C-d>" = "cmp.mapping.scroll_docs(-4)";
         "<C-Space>" = "cmp.mapping.complete()";
         "<CR>" =
-          "cmp.mapping.confirm({ select = false })"; # Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+          "cmp.mapping.confirm({ select = true })"; # Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         "<S-CR>" =
           "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })";
       };

@@ -22,4 +22,3 @@ let p3 = Person(name: "Hey", age: 10)
 if (p.name != "how") {
 }
 
-guar
